@@ -36,7 +36,9 @@
             this.TSTB_FileName = new System.Windows.Forms.ToolStripTextBox();
             this.TSL_FileName = new System.Windows.Forms.ToolStripLabel();
             this.TSB_JsonDeserialize = new System.Windows.Forms.ToolStripButton();
+            this.TSB_SetData = new System.Windows.Forms.ToolStripButton();
             this.TB_JsonText = new System.Windows.Forms.TextBox();
+            this.TB_JsonData = new System.Windows.Forms.TextBox();
             this.TS_JsonTool.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,8 @@
             this.TSB_JsonSerialize,
             this.TSTB_FileName,
             this.TSL_FileName,
-            this.TSB_JsonDeserialize});
+            this.TSB_JsonDeserialize,
+            this.TSB_SetData});
             this.TS_JsonTool.Location = new System.Drawing.Point(0, 0);
             this.TS_JsonTool.Name = "TS_JsonTool";
             this.TS_JsonTool.Size = new System.Drawing.Size(800, 25);
@@ -103,6 +106,17 @@
             this.TSB_JsonDeserialize.Text = "反序列化";
             this.TSB_JsonDeserialize.Click += new System.EventHandler(this.TSB_JsonDeserialize_Click);
             // 
+            // TSB_SetData
+            // 
+            this.TSB_SetData.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.TSB_SetData.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.TSB_SetData.Image = ((System.Drawing.Image)(resources.GetObject("TSB_SetData.Image")));
+            this.TSB_SetData.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSB_SetData.Name = "TSB_SetData";
+            this.TSB_SetData.Size = new System.Drawing.Size(60, 22);
+            this.TSB_SetData.Text = "设置数据";
+            this.TSB_SetData.Click += new System.EventHandler(this.TSB_SetData_Click);
+            // 
             // TB_JsonText
             // 
             this.TB_JsonText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -113,14 +127,28 @@
             this.TB_JsonText.Multiline = true;
             this.TB_JsonText.Name = "TB_JsonText";
             this.TB_JsonText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TB_JsonText.Size = new System.Drawing.Size(800, 383);
+            this.TB_JsonText.Size = new System.Drawing.Size(600, 420);
             this.TB_JsonText.TabIndex = 1;
+            // 
+            // TB_JsonData
+            // 
+            this.TB_JsonData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_JsonData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_JsonData.Location = new System.Drawing.Point(606, 28);
+            this.TB_JsonData.Multiline = true;
+            this.TB_JsonData.Name = "TB_JsonData";
+            this.TB_JsonData.ReadOnly = true;
+            this.TB_JsonData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TB_JsonData.Size = new System.Drawing.Size(194, 420);
+            this.TB_JsonData.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TB_JsonData);
             this.Controls.Add(this.TB_JsonText);
             this.Controls.Add(this.TS_JsonTool);
             this.Name = "Form1";
@@ -143,5 +171,7 @@
         private ToolStripTextBox TSTB_FileName;
         private ToolStripLabel TSL_FileName;
         private ToolStripButton TSB_JsonDeserialize;
+        private ToolStripButton TSB_SetData;
+        private TextBox TB_JsonData;
     }
 }
