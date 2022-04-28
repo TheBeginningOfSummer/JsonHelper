@@ -38,10 +38,11 @@ namespace JsonHelper
             try
             {
                 //data = Json.ReadJsonFile<TypeOfTray>(Environment.CurrentDirectory + "\\JsonFile\\" + TSTB_FileName.Text)!;
-                //data = JsonSerializer.Deserialize<Dictionary<int, string>>(TB_JsonText.Text)!;
-                Type type = Type.GetType("Dictionary<int, string>", false, true)!;
-                data = GetType().GetMethod("JsonSerializer.Deserialize")!.MakeGenericMethod(new Type[] { type }).
-                    Invoke(this, new object[] { TB_JsonText.Text })!;
+                data = JsonSerializer.Deserialize<Dictionary<int, string>>(TB_JsonText.Text)!;
+
+                //Type type = Type.GetType("Dictionary<int, string>", false, true)!;
+                //data = GetType().GetMethod("JsonSerializer.Deserialize")!.MakeGenericMethod(new Type[] { type }).
+                //    Invoke(this, new object[] { TB_JsonText.Text })!;
                 MessageBox.Show("反序列化到了变量data", "数据反序列化");
             }
             catch (Exception ex)
